@@ -327,8 +327,8 @@ Statistiken:
   resultsContent.textContent = resultText;
   resultsPanel.classList.add('visible');
   
-  // Auch als Alert
-  alert(resultText);
+  // Zum Ergebnis scrollen
+  resultsPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 function reset(): void {
