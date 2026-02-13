@@ -30,7 +30,55 @@ h1 {
 .instructions {
   text-align: center;
   color: #aaa;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.options-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: #0f0f23;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.option-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.option-group label {
+  color: #aaa;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.option-group select {
+  background: #1a1a2e;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.option-group select:hover,
+.option-group select:focus {
+  border-color: #00d9ff;
+  outline: none;
+}
+
+.option-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #00d9ff;
+  cursor: pointer;
 }
 
 .text-display {

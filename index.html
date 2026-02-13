@@ -13,6 +13,33 @@
         Tippe den folgenden Text ab. Die Shift-Tasten-Nutzung wird analysiert.
       </p>
       
+      <div class="options-panel">
+        <div class="option-group">
+          <label for="textSelect">Text:</label>
+          <select id="textSelect">
+            <option value="0">Einfacher Text (Deutsch)</option>
+            <option value="1">Text mit Sonderzeichen</option>
+            <option value="2">Englischer Text</option>
+            <option value="3">Programmier-Übung</option>
+          </select>
+        </div>
+        
+        <div class="option-group">
+          <label for="layoutSelect">Tastatur-Layout:</label>
+          <select id="layoutSelect">
+            <option value="de">Deutsch (QWERTZ)</option>
+            <option value="en">Englisch (QWERTY)</option>
+          </select>
+        </div>
+        
+        <div class="option-group">
+          <label>
+            <input type="checkbox" id="showSpaceSymbol" checked />
+            Leerzeichen als ␣ anzeigen
+          </label>
+        </div>
+      </div>
+      
       <div class="text-display" id="textDisplay"></div>
       
       <textarea 
