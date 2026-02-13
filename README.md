@@ -1,6 +1,6 @@
-# Tipp-Trainer 
+# Typechecker 
 
-Ein interaktiver Tipp-Trainer, der die korrekte Nutzung der Shift-Tasten analysiert.
+Der etwas andere Typechecker, der die korrekte Nutzung der Shift-Tasten analysiert.
 
 ## Features
 
@@ -15,13 +15,13 @@ Ein interaktiver Tipp-Trainer, der die korrekte Nutzung der Shift-Tasten analysi
 
 ## Demo
 
-Die App ist als statische Webseite verfügbar: [GitHub Pages Demo](https://github.com/pages/typechecker)
+Die App ist als statische Webseite verfügbar: [GitHub Pages Demo](https://absurd-mind.github.io/typechecker/)
 
 ## Installation
 
 ```bash
 # Repository klonen
-git clone https://github.com/your-username/typechecker.git
+git clone https://github.com/Absurd-Mind/typechecker.git
 cd typechecker
 
 # Dependencies installieren
