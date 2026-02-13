@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipp-Trainer - Shift-Tasten Analyse</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tipp-Trainer</h1>
+      <p class="instructions">
+        Tippe den folgenden Text ab. Die Shift-Tasten-Nutzung wird analysiert.
+      </p>
+      
+      <div class="text-display" id="textDisplay"></div>
+      
+      <textarea 
+        id="inputArea" 
+        placeholder="Hier tippen..."
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      ></textarea>
+      
+      <div class="stats-panel">
+        <h2>Statistiken</h2>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-label">Linke Shift-Taste</span>
+            <span class="stat-value" id="leftShiftCount">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Rechte Shift-Taste</span>
+            <span class="stat-value" id="rightShiftCount">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Korrekte Shift-Nutzung</span>
+            <span class="stat-value" id="correctShiftCount">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Falsche Shift-Nutzung</span>
+            <span class="stat-value" id="wrongShiftCount">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Tippfehler</span>
+            <span class="stat-value" id="errorCount">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Fortschritt</span>
+            <span class="stat-value" id="progress">0%</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="shift-log">
+        <h3>Shift-Tasten Log</h3>
+        <div id="shiftLog" class="log-content"></div>
+      </div>
+
+      <button id="resetBtn" class="reset-btn">Neu starten</button>
+    </div>
+    
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
