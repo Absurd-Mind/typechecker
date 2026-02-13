@@ -39,9 +39,11 @@ const layouts = {
       '6', '7', '8', '9', '0', 'ß', '´'
     ]),
     // Sonderzeichen mit Shift (linke Hand Position -> rechte Shift)
-    shiftedLeftHand: new Set(['!', '"', '§', '$', '%']),
+    // 1→! 2→" 3→§ 4→$ 5→%  und <→>
+    shiftedLeftHand: new Set(['!', '"', '§', '$', '%', '>']),
     // Sonderzeichen mit Shift (rechte Hand Position -> linke Shift)
-    shiftedRightHand: new Set(['&', '/', '(', ')', '=', '?', '`', '*', "'", '>', ';', ':', '_'])
+    // 6→& 7→/ 8→( 9→) 0→= ß→? ´→` +→* #→' ,→; .→: -→_
+    shiftedRightHand: new Set(['&', '/', '(', ')', '=', '?', '`', '*', "'", ';', ':', '_'])
   },
   en: {
     // QWERTY: Linke Hand Tasten
