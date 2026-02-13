@@ -13,6 +13,13 @@ const sampleTexts = [
   `const result = array.map((item) => item * 2); if (x > 0 && y < 10) { return true; } // #TODO: Fix bug @line:42`
 ];
 
+const textNames = [
+  "Einfacher Text (Deutsch)",
+  "Text mit Sonderzeichen",
+  "Englischer Text",
+  "Programmier-Übung"
+];
+
 // Tastenlayouts für verschiedene Sprachen
 const layouts = {
   de: {
@@ -300,7 +307,11 @@ function showCompletion(): void {
     ? Math.round((stats.correctShiftCount / totalShiftEvents) * 100) 
     : 100;
   
-  alert(`Geschafft! 🎉
+  const layoutName = currentLayout === 'de' ? 'Deutsch (QWERTZ)' : 'Englisch (QWERTY)';
+  const resultText = `Geschafft! 🎉
+
+Text: ${textNames[currentTextIndex]}
+Layout: ${layoutName}
 
 Statistiken:
 - Linke Shift: ${stats.leftShiftCount}x
@@ -308,7 +319,16 @@ Statistiken:
 - Korrekte Shift-Nutzung: ${stats.correctShiftCount}
 - Falsche Shift-Nutzung: ${stats.wrongShiftCount}
 - Shift-Genauigkeit: ${accuracy}%
-- Tippfehler: ${stats.errorCount}`);
+- Tippfehler: ${stats.errorCount}`;
+  
+  // Ergebnis auf der Seite anzeigen
+  const resultsPanel = document.getElementById('resultsPanel') as HTMLDivElement;
+  const resultsContent = document.getElementById('resultsContent') as HTMLPreElement;
+  resultsContent.textContent = resultText;
+  resultsPanel.classList.add('visible');
+  
+  // Auch als Alert
+  alert(resultText);
 }
 
 function reset(): void {
@@ -324,6 +344,10 @@ function reset(): void {
   inputArea.value = '';
   shiftLogEl.innerHTML = '';
   
+  // Ergebnis-Panel verstecken
+  const resultsPanel = document.getElementById('resultsPanel') as HTMLDivElement;
+  resultsPanel.classList.remove('visible');
+  
   renderText('');
   updateStats();
   inputArea.focus();
@@ -334,6 +358,18 @@ document.addEventListener('keydown', handleKeyDown);
 document.addEventListener('keyup', handleKeyUp);
 inputArea.addEventListener('input', handleInput);
 resetBtn.addEventListener('click', reset);
+
+// Copy Button Event Listener
+const copyResultBtn = document.getElementById('copyResultBtn') as HTMLButtonElement;
+copyResultBtn.addEventListener('click', () => {
+  const resultsContent = document.getElementById('resultsContent') as HTMLPreElement;
+  navigator.clipboard.writeText(resultsContent.textContent || '').then(() => {
+    copyResultBtn.textContent = 'Kopiert! ✓';
+    setTimeout(() => {
+      copyResultBtn.textContent = 'Ergebnis kopieren';
+    }, 2000);
+  });
+});
 
 // Event Listener für Optionen
 textSelect.addEventListener('change', () => {
